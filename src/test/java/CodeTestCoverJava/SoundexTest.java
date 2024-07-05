@@ -1,18 +1,32 @@
 package CodeTestCoverJava;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 public class SoundexTest {
 
     @Test
     public void testEmptyString() {
-       //  assertTrue(Soundex.generateSoundex("")=="");
+        assertEquals("", Soundex.generateSoundex(""));
     }
 
     @Test
     public void testSingleCharacter() {
-         //assertTrue(Soundex.generateSoundex("A")=="A000");
+        assertEquals("A000", Soundex.generateSoundex("A"));
+    }
+
+    @Test
+    public void testMultipleCharacters() {
+        assertEquals("A123", Soundex.generateSoundex("AbCdEfG"));
+    }
+
+    @Test
+    public void testLowerCase() {
+        assertEquals("A123", Soundex.generateSoundex("abcdefg"));
+    }
+
+    @Test
+    public void testNonAlphabetic() {
+        assertEquals("A000", Soundex.generateSoundex("1234$%"));
     }
 }
