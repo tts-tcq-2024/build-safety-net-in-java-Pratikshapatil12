@@ -40,7 +40,7 @@ public class Soundex {
                 prevCode = code;
             }
         }
-        while (soundex.length() < 4) {
+                while (soundex.length() < 4) {
             soundex.append('0');
         }
         return soundex.toString();
